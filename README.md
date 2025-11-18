@@ -6,4 +6,3 @@ Instructions:
 1. Locate the ccGen.py script
 2. Place the input file in the same directory.
 3. Run ccGen.py in the same directory by executing "python ccGen.py"
-4. Follow the instructions
