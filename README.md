@@ -2,7 +2,14 @@ Generates an .srt file containing timed closed captions sourced from an input vi
 
 Requires openai-whisper, CUDA PyTorch, and ffmpeg to function.
 
-Instructions:
+Dependency installation commands:
+- pip install openai-whisper
+- pip install torch --index-url https://download.pytorch.org/whl/cu130 (**change to current version**)
+- winget install Gyan.FFmpeg
+
+Instructions to Run:
 1. Locate the ccGen.py script
 2. Place the input file in the same directory.
-3. Run ccGen.py in the same directory by executing "python ccGen.py"
+3. Execute ccGen.py inside the same directory ("python ccGen.py")
+
+Made by Ji Han Um
