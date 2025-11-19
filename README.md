@@ -1,6 +1,6 @@
 Generates an .srt file containing timed closed captions sourced from an input video or audio file. Can output translated closed captions.
 
-Requires openai-whisper, CUDA PyTorch, and ffmpeg to function. Code is written to run on Nvidia GPUs.
+Code is written to run on Nvidia GPUs.
 
 Dependency installation commands:
 - pip install openai-whisper
