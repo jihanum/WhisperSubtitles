@@ -7,6 +7,6 @@ Dependency installation commands:
 - pip install torch --index-url https://download.pytorch.org/whl/cu130 (**change to current version**)
 - winget install Gyan.FFmpeg
 
-Note: The audio/video file must be in the same directory, although it may be configured.
+Note: The audio/video file must be in the same directory.
 
 Made by Ji Han Um
