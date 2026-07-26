@@ -1,12 +1,1 @@
-Generates an .srt file containing timed closed captions sourced from an input video or audio file. Can output translated closed captions.
-
-Code is written to run on Nvidia GPUs.
-
-Dependency installation commands:
-- pip install openai-whisper
-- pip install torch --index-url https://download.pytorch.org/whl/cu126 (choose a version that is compatible)
-- winget install Gyan.FFmpeg
-
-Note: The audio/video file must be in the same directory.
-
-Made by Ji Han Um
+Personal project to use ffmpeg to process file audio, to output .srt files containing usable closed captions generated from openai-whisper. Translating to other languages is also included using the deep-translator library.
