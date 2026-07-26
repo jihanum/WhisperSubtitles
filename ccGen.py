@@ -1,33 +1,33 @@
 import os.path
 import whisper
+import torch
 
-print("\nNote: Python file must be placed in same directory as video\n")
+print("Is GPU acceleration available? ", torch.cuda.is_available())
 
-fileName = input("File name: ")
-video_path = os.path.abspath(os.path.join(os.path.dirname(__file__), fileName))
-
-print("Target: " + video_path)
+print("Select the file.")
+# Function; open a file explorer dialog prompt to select the file
+# filename =
+# file_dir =
 
 isTranslate = bool(input("\nTranslate? "))
-
 if isTranslate:
-    targetLanguage = input("Select language: ")
+    targetLanguage = [input("Enter the target language: ")]
 
 # From Subtitle Generator
-subtitleSavePath = os.path.abspath(os.path.join(os.path.dirname(__file__), 'Subtitles', fileName))
-if not os.path.exists(subtitleSavePath):
-    os.makedirs(subtitleSavePath)
-
+subtitleSavePath = # output next to video file, in subtitles folder
 
 print("\nLoading model...")
+# Implement an autoselection function
 model = whisper.load_model("medium", device="cuda")
 
 print("\nTranscribing...\n")
+# implement a progress bar
 
 if isTranslate:
-    result = model.transcribe(video_path, language=targetLanguage, task="transcribe", verbose=True)
+    for language in targetLanguage:
+        result[] = model.transcribe(fileName, language=language, task="transcribe", verbose=True) # find how to get the index number of language
 else:
-    result = model.transcribe(video_path, verbose=True)
+    result[] = model.transcribe(fileName, verbose=True)
 
 # Timestamp function
 def format_timestamp(seconds):
@@ -39,17 +39,18 @@ def format_timestamp(seconds):
 
 # SRT file
 
-if isTranslate:
-    SRT_PATH = os.path.join(subtitleSavePath, fileName + '_' + targetLanguage + '.srt')
-else:
-    SRT_PATH = os.path.join(subtitleSavePath, fileName + '.srt')
+for language in result:
+    if isTranslate:
+        SRT_PATH = os.path.join(subtitleSavePath, fileName + '_' + targetLanguage + '.srt')
+    else:
+        SRT_PATH = os.path.join(subtitleSavePath, fileName + '.srt')
 
-with open(SRT_PATH, "w", encoding="utf-8") as f:
-    for idx, segment in enumerate(result["segments"], start=1):
-        start_time = format_timestamp(segment["start"])
-        end_time = format_timestamp(segment["end"])
-        text = segment["text"].strip()
+    with open(SRT_PATH, "w", encoding="utf-8") as f:
+        for idx, segment in enumerate(result["segments"], start=1):
+            start_time = format_timestamp(segment["start"])
+            end_time = format_timestamp(segment["end"])
+            text = segment["text"].strip()
 
-        f.write(f"{idx}\n{start_time} --> {end_time}\n{text}\n\n")
+            f.write(f"{idx}\n{start_time} --> {end_time}\n{text}\n\n")
 
-print("\nSubtitles generated and saved.")
+print("\nSubtitles generated and saved. Ready for next file?")
