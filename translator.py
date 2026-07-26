@@ -80,4 +80,4 @@ for lang in target_languages:
 
     print(f"Saved to {new_srt_path}")
 
-print("\nDone.")
+print("\nDone!")
