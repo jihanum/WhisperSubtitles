@@ -1,1 +1,1 @@
-Personal project to use ffmpeg to process file audio, to output .srt files containing usable closed captions in the same language. Translating is also included, from another program using the deep-translator library.
+Personal project to use ffmpeg to process file audio, to output .srt files containing usable closed captions generated from openai-whisper. Translating is also included, from another program using the deep-translator library.
