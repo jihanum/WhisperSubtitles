@@ -1,3 +1,5 @@
 openai-whisper
 torch
-# download.pytorch.org/whl/cu126
+# e.g., download.pytorch.org/whl/cu126
+deep-translator
+# ffmpeg.exe
